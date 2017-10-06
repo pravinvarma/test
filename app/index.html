@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flight Search | Pravin Varma</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/vendor.min.js"></script>
+    <script src="dist/scripts.min.js"></script>
+</head>
+
+<body ng-app="flightSearchModule" ng-controller="flightSearchController as vm" ng-cloak>
+    <div data-ng-if="loading" class="loaderBG">
+        <md-progress-circular md-mode="indeterminate" class="loader"></md-progress-circular>
+    </div>
+    <div class="container">
+        <aside ng-class="(!vm.flightData) ? 'onload' :'ondataLoad'">
+            <form name="vm.onewayform">
+                <div>
+                    <ul class="tabs clearfix" ng-init="typeoftravel = 'oneway'">
+                        <li ng-click="typeoftravel= 'oneway'" ng-class="typeoftravel== 'oneway'?'activeTab':''">
+                            <input type="radio" ng-model='typeoftravel' name="typeoftravel" value='oneway' />One Way</li>
+                        <li ng-click="typeoftravel= 'return'" ng-class="typeoftravel== 'return'?'activeTab':''">
+                            <input type="radio" ng-model='typeoftravel' name="typeoftravel" value="return" />Return </li>
+                    </ul>
+                    <div id="oneway" class="tabContentOneway">
+                        <div class="row">
+                            <input type="text" placeholder="Enter Origin City" ng-model="vm.searchoneway.origin" name="onewayOrigin" uib-typeahead="state as state.name for state in vm.airport | filter:$viewValue | limitTo:8" class="form-control" typeahead-min-length=0 required>
+                            <span class="glyphicon glyphicon-sort swap-source-dest" ng-click="vm.swapSourceDest()" ng-disabled="vm.onewayform.onewayOrigin.$invalid || vm.onewayform.onewayDestiny.$invalid"></span>
+                        </div>
+                        <div class="row">
+                            <input type="text" placeholder="Enter Destination City" ng-model="vm.searchoneway.destination" name="onewayDestiny" uib-typeahead="state as state.name for state in vm.airport | filter:$viewValue | limitTo:8" class="form-control" typeahead-min-length=0 typeahead-on-select="vm.onSelected(vm.searchoneway)" required>
+                            <span class="glyphicon glyphicon-alert issue-icon" aria-hidden="true" ng-if="vm.isSourceDestinationSame"></span>
+                        </div>
+                        <div class="row">
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{vm.format}}" ng-model="vm.searchoneway.oneway.date" name="onewayDate" is-open="vm.oneWayDatepicker.opened" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" alt-input-formats="vm.altInputFormats" show-button-bar="false" placeholder="Onward Date" />
+                                <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="vm.openOneWayDatepicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                            </p>
+                        </div>
+                        <div class="row" ng-if="typeoftravel == 'return'">
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{vm.format}}" placeholder="Return Date" ng-model="vm.searchoneway.return.date" name="returnDate" name="returnDate" is-open="vm.returnWayDatepicker.opened" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" alt-input-formats="vm.altInputFormats" show-button-bar="false" />
+                                <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="vm.openReturnWayDatepicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                            </p>
+
+                        </div>
+                        <div class="row">
+                            <select placeholder="Passangers">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <button ng-click="vm.flightOneWaySearch(vm.searchoneway)" ng-model="searchString" ng-disabled="vm.onewayform.onewayOrigin.$invalid || vm.onewayform.onewayDestiny.$invalid || vm.onewayform.onewayDate.$invalid || vm.onewayform.returnDate.$invalid || vm.isSourceDestinationSame" class="searchBtn">
+                                Search a Flight
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div class="rangeContainer row" ng-if="vm.flightData">
+                            <h5>
+  Refine Flight Search
+    </h5>
+                            <div class="rangeValues">
+                                {{vm.minVal | currency:'₹'}}
+                            </div>
+                            <div class="range-slider-wrapper">
+                                <input id="ageInputId" name="price" type="range" max={{vm.maxVal}} ng-model="vm.value"  value="vm.maxVal" min={{vm.minVal}}  >
+                                <div class="output-value">{{vm.value | currency:'₹'}}</div>
+                            </div>
+                            <div class="rangeValues right">{{vm.maxVal | currency:'₹'}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </aside>
+
+        <section ng-if="vm.flightData">
+            <div ng-show="vm.errorMsg" ng-bind="vm.errorMsg"></div>
+            <!--      <div ng-hide="{{vm.flightData}}"><h3>Search your flight now!</h3><p>Use the form on left side to search for your flight. Use slider to choose flight as per your budget</p></div>-->
+            <p ng-show="vm.flightData" class="breadcrumb">{{vm.breadcrumb.origin.name}} <span class="glyphicon glyphicon-chevron-right"></span> {{vm.breadcrumb.destination.name}} <span ng-show="vm.searchoneway.return"> <span class="glyphicon glyphicon-chevron-right"></span> {{vm.breadcrumb.origin.name}}</span>
+            </p>
+            <div ng-repeat="data in vm.flightData | myFilter:vm.value">
+
+                <div class="row datarow" ng-show="!vm.searchoneway.return">
+                    <div class="col-md-12 col-xs-12">
+
+                        <p class="text-center fromto" ng-show="$first"><strong>{{vm.breadcrumb.origin.iata}} <span class="	glyphicon glyphicon-plane plane"></span> {{vm.breadcrumb.destination.iata}} </strong></p>
+                        <div class="row header" ng-show="$first">
+                            <div class="col-md-3 col-xs-3">Airline</div>
+                            <div class="col-md-3 col-xs-3">Depart</div>
+                            <div class="col-md-3 col-xs-3">Arrive</div>
+                            <div class="col-md-3 col-xs-3">Cost</div>
+                        </div>
+                        <div class="flightInfo">
+                            <div class="row">
+                                <div class="col-md-3 col-xs-3">{{data.flight_number}}</div>
+                                <div class="col-md-3 col-xs-3">{{data.departure}}</div>
+                                <div class="col-md-3 col-xs-3">{{data.arrival}}</div>
+                                <div class="col-md-3 col-xs-3">
+                                    <button class="btn btn-success">{{data.cost | currency:'₹'}}</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row datarow" ng-show="vm.searchoneway.return">
+                <div class="col-md-6 col-xs-12">
+                    <div ng-repeat="data in vm.flightData | myFilter:vm.value">
+                        <p class="text-center fromto" ng-show="$first"><strong>{{vm.breadcrumb.origin.iata}} <span class="	glyphicon glyphicon-plane plane"></span> {{vm.breadcrumb.destination.iata}} </strong></p>
+                        <div class="row header" ng-show="$first">
+                            <div class="col-md-3 col-xs-3">Airline</div>
+                            <div class="col-md-3 col-xs-3">Depart</div>
+                            <div class="col-md-3 col-xs-3">Arrive</div>
+                            <div class="col-md-3 col-xs-3">Cost</div>
+                        </div>
+                        <div class="flightInfo">
+                            <div class="row">
+                                <div class="col-md-3 col-xs-3">{{data.flight_number}}</div>
+                                <div class="col-md-3 col-xs-3">{{data.departure}}</div>
+                                <div class="col-md-3 col-xs-3">{{data.arrival}}</div>
+                                <div class="col-md-3 col-xs-3">
+                                    <button class="btn btn-success">{{data.cost | currency:'₹'}}</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-xs-12" ng-show="vm.searchoneway.return">
+                    <div ng-repeat="data in vm.flightData | myFilter:vm.value">
+                        <p class="text-center fromto" ng-show="$first"><strong>{{vm.breadcrumb.destination.iata}}  <span class="	glyphicon glyphicon-plane plane"></span>{{vm.breadcrumb.origin.iata}} </strong></p>
+                        <div class="row header" ng-show="$first">
+                            <div class="col-md-3 col-xs-3">Airline</div>
+                            <div class="col-md-3 col-xs-3">Depart</div>
+                            <div class="col-md-3 col-xs-3">Arrive</div>
+                            <div class="col-md-3 col-xs-3">Cost</div>
+                        </div>
+                        <div class="flightInfo">
+
+                            <div class="row">
+                                <div class="col-md-3 col-xs-3">{{data.flight_number}}</div>
+                                <div class="col-md-3 col-xs-3">{{data.return.departure}}</div>
+                                <div class="col-md-3 col-xs-3">{{data.return.arrival}}</div>
+                                <div class="col-md-3 col-xs-3">
+                                    <button class="btn btn-success">{{data.cost | currency:'₹'}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,580 @@
+.btn {
+    font-size: 12px!important;
+}
+
+* {
+    outline: none;
+}
+
+html.md-default-theme,
+html,
+body.md-default-theme,
+body {
+    font-family: sans-serif;
+    background-color: rgb(250, 250, 250)!important;
+    font-size: 100%;
+    color: #fff
+}
+
+body .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+body .form-control:focus {
+    box-shadow: none;
+}
+
+body select {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+body .swap-source-dest {
+       width: 22px;
+    height: 22px;
+    background: #fff;
+    color: #000;
+    display: block;
+    border: 1px solid;
+    border-radius: 1000px;
+    position: absolute!important;
+    left: 50%;
+    margin-left: -13px;
+    z-index: 1;
+    font-size: 11px;
+    top: 22px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 22px!important;
+}
+
+body .swap-source-dest:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transition: 1s;
+}
+
+body .searchBtn {
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 14px 0!important;
+    font-weight: bold;
+}
+
+.input-group .btn {
+    background: transparent;
+    border: none;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.plane {
+    transform: rotate(90deg);
+    padding: 0 5px;
+}
+
+.fromto {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 5px 0;
+}
+
+.tabs li {
+    cursor: pointer
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+.col30 {
+    padding: 10px;
+}
+
+.breadcrumb {
+    padding: 20px 0
+}
+
+.datarow {
+    margin: 0!important
+}
+
+.datarow .flightInfo {
+    background: #f5f5f5;
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    line-height: 29px;
+}
+
+section h1 {
+    font-size: 2em;
+    color: #000;
+    font-family: sans-serif;
+    font-weight: bold
+}
+
+.text-center {
+    text-align: center
+}
+
+.rangeContainer {
+    position: relative
+}
+
+.rangeValues {
+    position: absolute;
+    top: 55px;
+}
+
+.right {
+    right: 0
+}
+
+.container {
+    margin: 0 auto
+}
+
+
+/*Comman styling*/
+
+.text-right {
+    text-align: right;
+}
+
+input,
+select {
+    font-family: sans-serif !important;
+    padding: 2px 3px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1.2em
+}
+
+a {
+    font-size: 1.4em;
+}
+
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal
+}
+
+input {
+    width: 97%
+}
+
+select {
+    width: 100%
+}
+
+header {
+    padding: 5px;
+    color: #fff;
+    font-size: 1.4em;
+    background: rgba(0, 0, 0, 1);
+}
+
+aside {
+    padding-bottom: 39px;
+}
+
+.bodyHead {
+    padding: 10px 0;
+}
+
+.uib-datepicker-popup.dropdown-menu {
+    padding: 0 10px;
+    color: #000;
+    background: #fff;
+    font-family: sans-serif
+}
+
+.uib-datepicker-popup td,
+button[disabled] {
+    font-size: 11px!important;
+}
+
+.uib-datepicker .uib-title,
+.uib-daypicker .btn-default {
+    border: none;
+    background: #fff;
+    color: #000;
+    font-family: sans-serif
+}
+
+.btn-default.active {
+    background: #32ce14!important;
+    border-radius: 10000px !important;
+    height: 33px;
+    ;
+    color: #fff
+}
+
+select {
+    color: #000
+}
+
+[uib-typeahead-popup].dropdown-menu {
+    font-size: 11px;
+}
+
+button {
+    background: #32ce14;
+    font-family: sans-serif;
+    border: none;
+    padding: 10px 5px;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    width: 100%
+}
+
+button[disabled] {
+    background: rgba(36, 151, 227, 0.19);
+    border: none;
+    padding: 10px 5px;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    width: 100%;
+    position: static;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.col10 {
+    width: 10%;
+    float: left;
+}
+
+.col20 {
+    width: 20%;
+    float: left;
+}
+
+.col30 {
+    width: 30%;
+    float: left;
+}
+
+.col40 {
+    width: 40%;
+    float: left;
+}
+
+.col50 {
+    width: 50%;
+    float: left;
+}
+
+.col60 {
+    width: 60%;
+    float: left;
+}
+
+output {
+    position: absolute;
+    left: 40px
+}
+
+
+/*Media: Smartphone/ 320-480*/
+
+@media screen and (max-width:1200px) {
+    body,
+    input,
+    select,
+    button {
+        font-size: 11px!important;
+    }
+    body .tabs > li {
+        font-weight: bold;
+        font-size: 1.6em;
+    }
+    aside {
+        float: none;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+    body .container {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+    body .col-md-3 {
+        padding: 0
+    }
+    body .col-xs-12 {
+        padding: 0
+    }
+    body .col-xs-6 {
+        padding: 0
+    }
+    body .row {
+        margin: 0;
+        position: relative;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    header {
+        width: 100%;
+        padding: 10px;
+    }
+    aside.onload {
+        float: none;
+        position: static;
+        width: 30%;
+        margin: 0 auto;
+        padding: 0
+    }
+    .onload ul.tabs > li {
+        padding: 15px 0;
+        vertical-align: middle;
+        background: #000;
+        color: #fff;
+    }
+    .onload .tabContentOneway {
+        padding: 0 24px;
+    }
+    .tabContentOneway .row {
+        position: relative;
+    }
+    body .issue-icon {
+        position: absolute;
+        right: 12px;
+        color: red;
+        top: 10px;
+    }
+    aside {
+        width: 20%;
+        float: left;
+        background: rgb(245, 245, 245);
+        ;
+        padding: 0 9px 44px;
+        border-radius: 10px;
+        position: fixed;
+        top: 72px;
+        padding: 0 25px;
+        padding-bottom: 39px;
+    }
+    section {
+        margin-top: 0px;
+        width: 81%;
+        float: left;
+        margin-left: 27%;
+    }
+}
+
+
+/*Slider CSS*/
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #32ce14;
+    border-radius: 1px;
+    border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #32ce14;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #32ce14;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #32ce14;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #32ce14;
+    border-radius: 1px;
+    border: 0px solid #000000;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #32ce14;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #A1D0FF;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #32ce14;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #32ce14;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #32ce14;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #32ce14;
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #32ce14;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #32ce14;
+}
+
+.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0
+}
+
+.tabs > li {
+    float: left;
+    padding: 2px 0;
+    font-size: 1.3em;
+    width: 50%;
+    text-align: center;
+}
+
+.tabs > li > input[type=radio] {
+    opacity: 0
+}
+
+.tabs li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 8px;
+    display: block;
+    font-weight: bold;
+}
+
+.activeTab {
+    border-bottom: 2px solid #32ce14;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -25px;
+    z-index: 10000;
+}
+
+.loaderBG {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5)
+}
+
+.flightRecord {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.typeahead-demo .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.typeahead-demo .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+}
+
+.typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.range-slider-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.output-value {
+    padding: 2px;
+    font-weight: bold;
+}
+
+/*Media Query*/

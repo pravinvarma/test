@@ -1,0 +1,181 @@
+{
+    "flight_data": [
+        {
+            "airline": "GoAir",
+            "flight_number": "AF-667",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "38706",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-667",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "38706",
+                "returnDate": "29/08/17"
+            }
+
+        },
+        {
+            "airline": "GoAir",
+            "flight_number": "AF-621",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "45302",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-621",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "45302",
+                "returnDate": "29/08/17"
+            }
+        },        {
+            "airline": "GoAir",
+            "flight_number": "AF-667",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "38706",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-667",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "38706",
+                "returnDate": "29/08/17"
+            }
+
+        },
+        {
+            "airline": "GoAir",
+            "flight_number": "AF-621",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "45302",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-621",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "45302",
+                "returnDate": "29/08/17"
+            }
+        },        {
+            "airline": "GoAir",
+            "flight_number": "AF-667",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "38706",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-667",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "38706",
+                "returnDate": "29/08/17"
+            }
+
+        },
+        {
+            "airline": "GoAir",
+            "flight_number": "AF-621",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "45302",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-621",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "45302",
+                "returnDate": "29/08/17"
+            }
+        },        {
+            "airline": "GoAir",
+            "flight_number": "AF-667",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "38706",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-667",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "38706",
+                "returnDate": "29/08/17"
+            }
+
+        },
+        {
+            "airline": "GoAir",
+            "flight_number": "AF-621",
+            "from": "New Delhi",
+            "to": "Pune",
+            "departure": "28/08/17",
+            "arrival": "28/08/17",
+            "duration": "2",
+            "cost": "45302",
+            "returnDate": "29/08/17",
+            "return": {
+                "airline": "GoAir",
+                "flight_number": "AF-621",
+                "from": "Pune",
+                "to": "New Delhi",
+                "departure": "28/08/17",
+                "arrival": "28/08/17",
+                "duration": "2",
+                "cost": "45302",
+                "returnDate": "29/08/17"
+            }
+        }
+]
+}
